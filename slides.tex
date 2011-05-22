@@ -1,0 +1,37 @@
+\documentclass[english,UKenglish,ignorenonframetext]{beamer}
+
+% ----------------------------------------------------------------------
+% New commands for beamer mode
+% ----------------------------------------------------------------------
+\newcommand<>\displayexample[2][]{%
+  \alt#3{\href{run:examples/example#2.tex}{$\blacktriangleright$}}%
+        {\phantom{$\blacktriangleright$}}%
+}
+% ----------------------------------------------------------------------
+
+% ----------------------------------------------------------------------
+% Some simple settings for appearance in presentation mode
+% ----------------------------------------------------------------------
+\definecolor{UEAblue}{RGB}{0,89,127}
+\definecolor{UEAgrey}{RGB}{153,139,125}
+\definecolor{UEAorange}{RGB}{215,128,25}
+
+\setbeamercolor{alerted text}{fg=UEAorange}
+\setbeamercolor{structure}{fg=UEAblue}
+
+\setbeamercolor{author}{fg=UEAgrey}
+\setbeamercolor{institute}{fg=UEAgrey}
+\setbeamercolor{date}{fg=UEAgrey}
+\setbeamercolor{framesubtitle}{fg=UEAgrey}
+
+\setbeamerfont{author}{size=\large}
+\setbeamerfont{date}{size=\large}
+\setbeamerfont{example text}{series=\bfseries}
+\setbeamerfont{frametitle}{series=\bfseries,size=\large}
+\setbeamerfont{framesubtitle}{series=\mdseries,size=\large}
+\setbeamerfont{section}{series=\bfseries}
+\setbeamerfont{title}{series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+% ----------------------------------------------------------------------
+
+\input{training}
