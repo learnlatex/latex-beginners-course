@@ -1,0 +1,19 @@
+\documentclass[english,UKenglish]{article}
+
+\usepackage[noamsthm]{beamerarticle}
+\usepackage[pdfborder={0 0 0}]{hyperref}
+
+% ----------------------------------------------------------------------
+% New commands for article mode
+% ----------------------------------------------------------------------
+\newcommand*\tutornote[1]{} % Gobble timing notes
+
+\newtheorem{Example}{\translate{Example}}
+\newtheorem{Exercise}{\translate{Exercise}}
+\newenvironment<>{exercise}{\begin{Exercise}\mbox{}}{\end{Exercise}}
+\newenvironment<>{example}
+  {\begin{Example}\mbox{}\nopagebreak}
+  {\end{Example}}
+% ----------------------------------------------------------------------
+
+\input{training}
