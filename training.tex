@@ -801,7 +801,38 @@ Some text \cite{key}.
 \end{exercise}
 
 \begin{frame}{Working with long documents}
+
+  \begin{itemize}
+    \item Long documents are best split into parts;
+    \item \cs{input} places the material loaded \enquote{here};
+    \item \cs{include} is used for separate chapters:\\ it always starts
+      a new page;
+    \item Using \cs{include} allows you to \cs{includeonly} single chapters.
+  \end{itemize}
+  
 \end{frame}
+
+\begin{exercise}
+
+  Create a master file
+  \begin{verbatim}
+    \documentclass{report}
+    \usepackage{lipsum}
+    \begin{document}
+      \include{chapter1}
+      \include{chapter2}
+      \include{chapter3}
+    \end{document}
+  \end{verbatim}
+  along with the three chapters, each of which can be as simple as
+  \begin{verbatim}
+    \chapter{A demo}
+    \lipsum
+  \end{verbatim}
+  Experiment with this basic structure, and using \cs{includeonly} to
+  use only some of the files.
+
+\end{exercise}
 
 \tutornote{Finish exercise at 15:30 and have refreshments. Q\&A
 session starts at 16:00.}
