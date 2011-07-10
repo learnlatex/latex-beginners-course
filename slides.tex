@@ -34,4 +34,12 @@
 \setbeamertemplate{navigation symbols}{}
 % ----------------------------------------------------------------------
 
+\AtBeginSection[] % Do nothing for \section*
+  {
+    \begin{frame}<beamer>
+      \frametitle{Outline}
+      \tableofcontents[currentsection]
+    \end{frame}
+  }
+
 \input{training}
