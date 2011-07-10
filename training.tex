@@ -290,22 +290,6 @@
 
 \end{frame}
 
-\begin{exercise}
-  Try creating the above document. The KOMA-Script classes have
-  various options that affect the document's appearance. Try
-  experimenting with some of the following: \texttt{chapterprefix}, 
-  \texttt{headings=small}, \texttt{headings=normal},
-  \texttt{headings=big}, \texttt{numbers=enddot},
-  \texttt{numbers=noenddot}.  For example:
-  \begin{verbatim}
-    \documentclass[chapterprefix]{scrreprt}
-  \end{verbatim}
-  
-  Also try making simple documents with \textsf{memoir} and \textsf{beamer}:
-  see how without any other changes, the entire appearance of the PDF
-  file is altered.
-\end{exercise}
-
 \begin{frame}{Documentation}
 
   \begin{block}{On your computer}
@@ -325,10 +309,40 @@
 
 \end{frame}
 
+\begin{exercise}
+  Try creating the above document. The KOMA-Script classes have
+  various options that affect the document's appearance. Try
+  experimenting with some of the following: \texttt{chapterprefix}, 
+  \texttt{headings=small}, \texttt{headings=normal},
+  \texttt{headings=big}, \texttt{numbers=enddot},
+  \texttt{numbers=noenddot}.  For example:
+  \begin{verbatim}
+    \documentclass[chapterprefix]{scrreprt}
+  \end{verbatim}
+  
+  Also try making simple documents with \textsf{memoir}:
+  see how without any other changes the appearance of the PDF
+  file is altered.
+  
+  To add some \enquote{dummy text} to your files, put the line
+  \verb"\usepackage{lipsum}" before \verb"\begin{document}", then
+  put \cs{lipsum} somewhere after \verb"\begin{document}". This 
+  will create a number of filler paragraphs. Use this to see what effect
+  the \texttt{twocolumn} class option has on the layouts you see.
+  
+  Use \textsf{texdoc} to look up the documentation for the classes
+  we are using. Some of these are very long: most of the time you only
+  need a small subset of the commands available!
+\end{exercise}
+
 \tutornote{Finish exercise at 12:30 and go to lunch. Restart at
 13:30.}
 
-\section{Structure}
+\section{Logical structure}
+
+\begin{frame}{Logical mark up}
+
+\end{frame}
 
 \begin{frame}{Title Page}
 
