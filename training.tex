@@ -184,13 +184,14 @@
 
 \end{frame}
 
-\begin{frame}{Spacing}
+\begin{frame}[fragile]{Spacing}
 
   \begin{itemize}
     \item \LaTeX{} treats multiple spaces as a single space;
     \item By default, the space between sentences is slightly larger
       than the space between words;
     \item This can be switched off using \cs{frenchspacing};
+    \item The tilde (\verb|~|) is used to create a non-breaking space;
     \item New line characters are treated as a space;
     \item Paragraph breaks should be indicated by a blank line;
     \item \LaTeX{} automatically indents paragraphs, except for the
@@ -229,7 +230,12 @@
   Adobe Reader.
   
   Try experimenting with white space: what do multiple spaces and 
-  multiple lines do?
+  multiple lines do? Also try out using the tilde (\verb"~") for 
+  a non-breaking space and \cs{,}, \cs{:} and \cs{;} for spaces of different
+  widths.
+  
+  \LaTeX{} automatically indents new paragraphs: see what the \cs{noindent}
+  macro does to these cases.
 \end{exercise}
 
 \tutornote{Finish exercise at 11:45}
