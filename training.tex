@@ -476,7 +476,7 @@
 
 \tutornote{Finish exercise at 14:30.}
 
-\section{Graphics}
+\section{Graphics and tables}
 
 \begin{frame}{On packages}
 
@@ -519,13 +519,20 @@
 
 \begin{frame}[fragile]{Floating figures}
 
-  \begin{block}{A basic figure}
+  \begin{block}{A floating figure \dots}
 \begin{semiverbatim}
 \\begin\{figure\}\alert<2>{[htbp]}
 \alert<3>{\\centering}
 \\includegraphics\{myimage\}
 \alert<4>{\\caption\{A Sample Figure\}}
+\alert<5>{\\label\{fig:sample\}}
 \\end\{figure\}
+\end{semiverbatim}
+  \end{block}
+  
+  \begin{block}<6->{\ldots needs a cross-reference}
+\begin{semiverbatim}
+as is show in Figure~\alert<6>{\\ref\{fig:sample\}}
 \end{semiverbatim}
   \end{block}
 
@@ -533,11 +540,22 @@
 
 \begin{exercise}
   Try producing the following document. (Use an image application,
-  such as paint, to produce a simple picture and save it as
+  such as Paint, to produce a simple picture and save it as
   \texttt{shapes.png}.)
   \verbatiminput{examples/example4}
   Here are some more class options to try that will affect the list of
   figures: \texttt{chapteratlists}, \texttt{chapteratlists=0mm}.
+  
+  Experiment with the \cs{label} and \cs{ref} mechanism. How many
+  \LaTeX{} runs do you need to get the cross-references right?
+  
+  What happens when you cross-reference to a chapter or section using
+  \begin{verbatim}
+    \section{An example}
+    \label{sec:example}
+    
+    As is shown in~\ref{sec:example}.
+  \end{verbatim}
 \end{exercise}
 
 \tutornote{Finish exercise at 15:00.}
