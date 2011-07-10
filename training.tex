@@ -278,6 +278,28 @@
   
 \end{frame}
 
+\begin{frame}[fragile]{KOMA-Script Example}
+
+  \verbatiminput{examples/example2}
+
+\end{frame}
+
+\begin{exercise}
+  Try creating the above document. The KOMA-Script classes have
+  various options that affect the document's appearance. Try
+  experimenting with some of the following: \texttt{chapterprefix}, 
+  \texttt{headings=small}, \texttt{headings=normal},
+  \texttt{headings=big}, \texttt{numbers=enddot},
+  \texttt{numbers=noenddot}.  For example:
+  \begin{verbatim}
+    \documentclass[chapterprefix]{scrreprt}
+  \end{verbatim}
+  
+  Also try making simple documents with \textsf{memoir} and \textsf{beamer}:
+  see how without any other changes, the entire appearance of the PDF
+  file is altered.
+\end{exercise}
+
 \begin{frame}[fragile]{Documentation}
 
   \begin{block}{On your computer}
@@ -296,24 +318,6 @@
   \end{block}
 
 \end{frame}
-
-\begin{frame}[fragile]{KOMA-Script Example}
-
-  \verbatiminput{examples/example2}
-
-\end{frame}
-
-\begin{exercise}
-  Try creating the above document. The KOMA-Script classes have
-  various options that affect the document's appearance. Try
-  experimenting with some of the following: \texttt{chapterprefix}, 
-  \texttt{headings=small}, \texttt{headings=normal},
-  \texttt{headings=big}, \texttt{numbers=enddot},
-  \texttt{numbers=noenddot}.  For example:
-  \begin{verbatim}
-    \documentclass[chapterprefix]{scrreprt}
-  \end{verbatim}
-\end{exercise}
 
 \tutornote{Finish exercise at 12:30 and go to lunch. Restart at
 13:30.}
