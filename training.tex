@@ -815,15 +815,7 @@ Some text \cite{key}.
 \begin{exercise}
 
   Create a master file
-  \begin{verbatim}
-    \documentclass{report}
-    \usepackage{lipsum}
-    \begin{document}
-      \include{chapter1}
-      \include{chapter2}
-      \include{chapter3}
-    \end{document}
-  \end{verbatim}
+  \verbatiminput{examples/example6.tex}
   along with the three chapters, each of which can be as simple as
   \begin{verbatim}
     \chapter{A demo}
@@ -855,7 +847,8 @@ session starts at 16:00.}
   \begin{itemize}
     \item \emph{Not So Short Introduction to \LaTeXe}, Oetiker;
     \item \emph{A Guide to \LaTeX}, Kopka and Daly;
-    \item \emph{\LaTeX{} Beginners Guide}, Kottwitz.
+    \item \emph{\LaTeX{} Beginners Guide}, Kottwitz;
+    \item \emph{\LaTeX{} and Friends}, van Dongen.
   \end{itemize}
 
 \end{frame}
