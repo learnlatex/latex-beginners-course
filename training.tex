@@ -340,7 +340,19 @@
 
 \section{Logical structure}
 
-\begin{frame}{Logical mark up}
+\begin{frame}[fragile]{Logical mark up}
+
+  \LaTeX{} provides us with logical mark up, as well as the ability to
+  directly set the appearance. 
+  \begin{block}{Logical mark up}
+      \cs{emph}\marg{\meta{text}}\\
+      \marg{\cs{large} \meta{text}}
+  \end{block}
+  \begin{block}{Appearance mark up}
+      \cs{textit}\marg{\meta{text}}\\
+      \marg{\cs{fontsize}\marg{12 pt}\marg{14 pt} \meta{text}}
+  \end{block}
+  Usually, logical mark up is best when it is available.
 
 \end{frame}
 
@@ -391,6 +403,75 @@
   Here are some more KOMA-Script class options to try: 
   \texttt{appendixprefix}, \texttt{toc=flat}, \texttt{headsepline},
   \texttt{footsepline}.
+  
+  Experiment with the logical mark up for appearance, for example
+  \cs{emph}, \cs{large}, \cs{Large} and \cs{Huge}. Compare these
+  with the direct changes brought about by \cs{textit} and \cs{textbf}.
+  
+  Try changing the format of text for a longer block by trapping the
+  formatting changes within \cs{begingroup} and \cs{endgroup}, for
+  example
+  \begin{verbatim}
+    \begingroup
+      \large
+      \itshape
+      Some text
+      
+      A second paragraph
+    \endgroup
+  \end{verbatim}
+  
+\end{exercise}
+
+\begin{frame}[fragile]{Mathematics}
+
+  \begin{itemize}
+    \item Mathematical content is marked up in \LaTeX{} in a logical way;
+    \item You can use \$ \ldots \$ or \cs{(} \ldots \cs{)} to mark up
+      in-line maths;
+    \item For displayed mathematics, use \cs{[} \ldots \cs{]};
+    \item A lot of spacing is automatic in math mode;
+    \item Maths is an entire area on its own!
+  \end{itemize}
+  
+  \begin{block}{Example input}
+    \verb"\( y = 2 \sin \theta^2 \)" 
+  \end{block}
+  
+  \begin{block}{Example output}
+    \( y = 2 \sin \theta^2 \)
+  \end{block}
+
+\end{frame}
+
+\begin{frame}{Creating your own commands}
+
+  \begin{block}{Syntax}
+    \cs{newcommand*}\cs{\meta{name}}\marg{\meta{replacement text}}\\
+    \cs{newcommand*}\cs{\meta{name}}\oarg{number}%
+      \marg{\meta{replacement text}}\\
+  \end{block}
+  
+  \begin{block}{Examples}
+    \cs{newcommand*}\cs{authorname}\marg{Joseph Wright} \\
+    \cs{newcommand*}\cs{important}\oarg{1}\marg{\cs{textbf}\marg{\#1}}
+  \end{block}
+
+\end{frame}
+
+\begin{exercise}
+
+  Try creating your own simple commands using \cs{newcommand}. Think of
+  how to create commands using 1, 2 and 3 arguments.
+  
+  Create some simple mathematical content (for example \verb"y = mx + c")
+  and compare the effect of \cs{(} \ldots \cs{)} with \cs{[} \ldots \cs{]}.
+  Can you work out how to get capitalised Greek letters? Can you
+  guess why some Greek do not seem to work?
+  
+  Subscripts and superscripts in math mode are created using \verb"_"
+  and \verb"^", respectively. Try these out, and think about why you
+  might use \cs{textsuperscript} rather than \verb"^" in some cases.
 \end{exercise}
 
 \tutornote{Finish exercise at 14:30.}
