@@ -503,17 +503,17 @@
 
 \section{Graphics and tables}
 
-\begin{frame}{On packages}
+\begin{frame}[fragile]{On packages}
 
   The \LaTeX{} kernel is rather limited: to get around that we
   load \emph{packages}:
-  \begin{center}
-    \cs{usepackage}\oarg{options}\marg{package}
-  \end{center}
+  \begin{semiverbatim}
+\cs{usepackage}\oarg{options}\marg{package}
+  \end{semiverbatim}
   or
-  \begin{center}
-    \cs{usepackage}\texttt{\{\meta{package1},\meta{package2},\ldots\}}
-  \end{center} 
+  \begin{semiverbatim}
+\cs{usepackage}\texttt{\{\meta{package1},\meta{package2},\ldots\}}
+  \end{semiverbatim} 
   We have already seen the \pkg{lipsum} package! 
   
   \vspace{1 em}
