@@ -423,6 +423,27 @@
   
 \end{exercise}
 
+\begin{frame}[fragile]{Lists}
+
+  \begin{block}{Order not important}
+\begin{verbatim}
+  \begin{itemize}
+    \item This is an unordered list
+  \end{itemize}
+\end{verbatim}
+  \end{block}
+  
+  \begin{block}{Order important}
+\begin{verbatim}
+  \begin{enumerate}
+    \item This one is ordered
+    \item So this will have number 2!
+  \end{enumerate}
+\end{verbatim}
+  \end{block}
+
+\end{frame}
+
 \begin{frame}[fragile]{Mathematics}
 
   \begin{itemize}
@@ -460,6 +481,10 @@
 \end{frame}
 
 \begin{exercise}
+  Make some lists, and nest one list inside another. How does the
+  format of the numbers or markers change? You can only go to
+  four levels with standard \LaTeX{}, but more than four nestings
+  tends to be a bad sign anyway!
 
   Try creating your own simple commands using \cs{newcommand}. Think of
   how to create commands using 1, 2 and 3 arguments.
