@@ -583,6 +583,47 @@ as is show in Figure~\alert<6>{\\ref\{fig:sample\}}
   \end{verbatim}
 \end{exercise}
 
+\begin{frame}{Tables}
+
+  \begin{itemize}
+    \item The floating environment for a table is called \texttt{table};
+    \item However, the content can be anything!
+    \item Use the \texttt{tabular} environment to make tables;
+    \item Use \textsf{booktabs} for rules.
+  \end{itemize}
+  
+\end{frame}
+  
+\begin{frame}[fragile]{Tables}
+  
+  \begin{block}{A simple table}
+\begin{semiverbatim}
+\alert<2>{\\begin\{table\}}
+  \alert<3>{\\begin\{tabular\}}\alert<4>{\{lcr\}}
+   \alert<5>{\\toprule}
+      Heading \alert<6>{&} Heading \alert<6>{&} Heading \alert<7>{\\\\}
+    \alert<5>{\\midrule}
+      a \alert<6>{&} b \alert<6>{&} c \alert<7>{\\\\}
+      d \alert<6>{&} e \alert<6>{&} f \alert<7>{\\\\}
+      \alert<8>{\\multicolumn\{3\}\{c\}\{Wide text\}} \alert<7>{\\\\}
+    \alert<5>{\\bottomrule}
+  \alert<3>{\\end\{tabular\}}
+\alert<2>{\\end{table}}
+\end{semiverbatim}
+  \end{block}
+
+\end{frame}
+
+\begin{exercise}
+
+  Use the simple table example to start experimenting with tables.
+  Try out different alignments using the \texttt{l}, \texttt{c} and
+  \texttt{r} column types. What happens if you have too few items
+  in a table row? How about too many? Experiment with the
+  \cs{multicolumn} command to span across columns.
+  
+\end{excercise}
+
 \tutornote{Finish exercise at 15:00.}
 
 \section{Bibliographies}
