@@ -170,35 +170,12 @@
   
 \end{frame}
 
-\begin{frame}[fragile]{Commands and arguments}
-
-  \begin{block}{Syntax}
-    \begin{semiverbatim}
-\\command
-\\command\{\meta{argument}\}
-\\command[\meta{argument}]
-\\command[\meta{argument1}]\{\meta{argument2}\}
-    \end{semiverbatim}
-  \end{block}
-  
-  \begin{block}<2>{Examples}
-    \begin{semiverbatim}
-\\maketitle
-\\emph\{\meta{text}\}
-\\lipsum[\meta{number}]
-\\section[\meta{short-title}]\{\meta{long-title}\}
-    \end{semiverbatim}
-  \end{block}
-
-\end{frame}
-
 \begin{frame}[fragile]{Spacing}
 
   \begin{itemize}
     \item \LaTeX{} treats multiple spaces as a single space;
     \item By default, the space between sentences is slightly larger
-      than the space between words;
-    \item This can be switched off using \cs{frenchspacing};
+      than the space between words -- can be switched off using \cs{frenchspacing};
     \item The tilde (\verb|~|) is used to create a non-breaking space;
     \item New line characters are treated as a space;
     \item Paragraph breaks should be indicated by a blank line;
@@ -260,7 +237,7 @@
   \end{block}
   \begin{block}{Appearance mark up}
       \cs{textit}\marg{\meta{text}}\\
-      \marg{\cs{fontsize}\marg{12 pt}\marg{14 pt} \meta{text}}
+      \marg{\cs{fontsize}\marg{12 pt}\marg{14 pt}\cs{selectfont} \meta{text}}
   \end{block}
   Usually, logical mark up is best when it is available.
 
@@ -280,9 +257,9 @@
 
 \begin{frame}{Sectioning commands}
 
-  Article-like classes provide the commands:
   \begin{itemize}
-    \item \cs{part}\oarg{\meta{short title}}\marg{\meta{title}}
+    \item 
+      \alert<2>{\cs{chapter}\oarg{\meta{short title}}\marg{\meta{title}}}
     \item \cs{section}\oarg{\meta{short title}}\marg{\meta{title}}
     \item \cs{subsection}\oarg{\meta{short title}}\marg{\meta{title}}
     \item \cs{subsubsection}\oarg{\meta{short title}}\marg{\meta{title}}
@@ -291,11 +268,6 @@
     \item \cs{subparagraph}\oarg{\meta{short title}}\marg{\meta{title}}
   \end{itemize}
   
-  \vspace{2 em}
-  \uncover<2->{%
-     Book and report-like classes also provide the command:\\
-    \cs{chapter}\oarg{\meta{short title}}\marg{\meta{title}}%
-  }
 
 \end{frame}
 
@@ -392,7 +364,7 @@
       and \cls{scrbook} to replace \cls{article}, \cls{report}
       and \cls{book}, respectively;
     \item[\cls{memoir}] replaces \cls{book} and \cls{report};
-    \item[\cls{beamer}] or slides (used to create the course 
+    \item[\cls{beamer}] for slides (used to create the course 
       material).
   \end{description}
   
@@ -518,9 +490,6 @@
 \end{frame}
 
 \begin{exercise}
-  Try creating your own simple commands using \cs{newcommand}. Think of
-  how to create commands using 1, 2 and 3 arguments.
-  
   Create some simple mathematical content (for example \verb"y = mx + c")
   and compare the effect of \cs{(} \ldots \cs{)} with \cs{[} \ldots \cs{]}.
   Can you work out how to get capitalised Greek letters? Can you
@@ -529,6 +498,9 @@
   Subscripts and superscripts in math mode are created using \verb"_"
   and \verb"^", respectively. Try these out, and think about why you
   might use \cs{textsuperscript} rather than \verb"^" in some cases.
+  
+  Try creating your own simple commands using \cs{newcommand}. Think of
+  how to create commands using 1, 2 and 3 arguments.
 \end{exercise}
 
 \tutornote{Finish exercise at 14:15.}
@@ -682,8 +654,8 @@ Some text \cite{key}.
   \resizebox{\linewidth}{!}{%
     \begin{tikzpicture}[thick]
       \begin{scope}[minimum width=1.5cm,minimum height=1.5cm,inner sep=.1em]
-        \path (0,0) node[draw] (edit) {\shortstack{Edit\\.tex\\File}};
-        \path (0,2) node[draw] (editbib) {\shortstack{Edit\\.bib\\File}};
+        \path (0,0) node[draw] (edit) {\shortstack{Edit\\\texttt{.tex}\\File}};
+        \path (0,2) node[draw] (editbib) {\shortstack{Edit\\\texttt{.bib}\\File}};
         \path (3.2,1) node[draw,diamond] (errors) 
           {\shortstack{Any\\Errors?}};
         \path (6.8,1) node[draw,diamond] (bibtexerrors)
@@ -692,9 +664,9 @@ Some text \cite{key}.
           {\shortstack{Any\\Errors?}};
         \path (12.5,1) node[draw] (pdf) {\shortstack{View\\PDF}};
       \end{scope}
-      \path (8.5,4.5) node[draw,rectangle] (rmbbl) {Remove .bbl file};
+      \path (8.5,4.5) node[draw,rectangle] (rmbbl) {Remove \texttt{.bbl} file};
       \draw[->] (edit) -- (1,1) -- (errors) node[midway,above] 
-        {\shortstack{\LaTeX\\.tex file}};
+        {\shortstack{\LaTeX\\\texttt{.tex} file}};
       \draw (editbib) -- (1,1);
       \draw[->] (errors) -- ++(0,-2) node[midway,left] {Yes}
         -| (edit) node[pos=0,below,anchor=north east] 
