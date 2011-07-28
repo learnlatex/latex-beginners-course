@@ -1,10 +1,43 @@
-\documentclass{article}
+\documentclass[oneside,numbers=noenddot]{scrbook}
 
-\usepackage{natbib}
-\bibliographystyle{plainnat}
+\usepackage{lipsum}% provides \lipsum to produce dummy text
+\usepackage{graphicx}% provides \includegraphics
+
+\titlehead{University of East Anglia\\
+Norwich\\
+NR15 1AJ}
+\subject{A thesis submitted for the degree of Doctor of Philosophy}
+\title{My Thesis}
+\author{Ann Author}
+\date{July 2010}
+\publishers{Prof.\ My Advisor}
 
 \begin{document}
-Main matter with citations such as \citet{lamport94}.
+\maketitle
 
-\bibliography{myrefs}
+\chapter{Introduction}
+
+This is a sample chapter with a figure and a reference to Chapter~\ref{ch:method}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{shapes}
+\caption{Some Shapes}
+\end{figure}
+
+\section{Sample Section}
+
+This is a sample section with some dummy text to pad it out. \lipsum
+
+\chapter{Method}\label{ch:method}
+
+This is another chapter with a reference to Figure~\ref{fig:shapes}
+and some more dummy text.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.5,angle=45]{shapes}
+\caption{A Sample Figure}\label{fig:shapes}
+\end{figure}
+
 \end{document}

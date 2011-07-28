@@ -40,23 +40,7 @@
 
 \mode<article>{\maketitle}
 
-\tutornote{Time: 10:30}
-
-\begin{frame}{Acknowledgements}
-
-  \begin{itemize}
-    \item Volunteers:
-      \begin{itemize}
-        \item Jay Hammond
-        \item Phil Molyneux
-        \item Joseph Wright
-      \end{itemize}
-    \item UK TeX Users' Group
-    \item University of East Anglia
-    \item Nicola Talbot
-  \end{itemize}
-  
-\end{frame}
+\tutornote{Time: 10:15}
 
 \mode<presentation>{%
   \begin{frame}{Outline}
@@ -119,7 +103,7 @@
 \begin{frame}{What do we need to use \LaTeX?}
 
   \begin{itemize}
-    \item A \TeX{} distribution: \TeX{}Live (Windows, Mac, Linux) or
+    \item A \TeX{} distribution: \TeX{} Live (Windows, Mac, Linux) or
       MiK\TeX{} (Windows only);
     \item A text editor, \emph{e.g.}~Notepad, TextEdit, Emacs;
     \item A PDF viewer, for example Adobe Reader.
@@ -135,6 +119,27 @@
   \end{itemize}
 \end{frame}
 
+\tutornote{Time: 10:30}
+
+\section{Getting started}
+
+\begin{frame}{\LaTeX{} is not a word processor}
+
+  \begin{itemize}
+    \item \LaTeX{} input is stored as plain text files, usually with
+      the extension \texttt{.tex};
+    \item \LaTeX{} input files contain both the text of the document
+      and \emph{commands};
+    \item Commands start with a slash, so look like this:
+      \cs{example};
+    \item Writing in \LaTeX{} is therefore a bit like \emph{programming}
+      it to produce the document you want;
+    \item \emph{Logical} mark up is important in \LaTeX: we'll use some
+      almost straight away!
+  \end{itemize}
+
+\end{frame}
+
 \begin{frame}{Workflow}
 
   \resizebox{\linewidth}{!}{%
@@ -144,7 +149,7 @@
       inner sep      = 0.1 em,
       thick
     ]
-      \path (0,0) node[draw] (edit) {\shortstack{Edit\\.tex\\File}} ;
+      \path (0,0) node[draw] (edit) {\shortstack{Edit\\\texttt{.tex}\\File}} ;
       \path (3.5,0) node[draw,diamond] (errors) 
         {\shortstack{Any\\Errors?}};
       \path (7,0) node[draw] (pdf) {\shortstack{View\\PDF}};
@@ -165,24 +170,25 @@
   
 \end{frame}
 
-\tutornote{10:45--11:15 Install \TeX}
+\begin{frame}[fragile]{Commands and arguments}
 
-\section{Getting started}
-
-\begin{frame}{\LaTeX{} is not a word processor}
-
-  \begin{itemize}
-    \item \LaTeX{} input is stored as plain text files, usually with
-      the extension \texttt{.tex};
-    \item \LaTeX{} input files contain both the text of the document
-      and \emph{control sequences};
-    \item Control sequences start with a slash, so look like this:
-      \cs{example}
-    \item Writing in \LaTeX{} is therefore a bit like \emph{programming}
-      it to produce the document you want;
-    \item \emph{Logical} mark up is important in \LaTeX: we'll use some
-      almost straight away!
-  \end{itemize}
+  \begin{block}{Syntax}
+    \begin{semiverbatim}
+\\command
+\\command\{\meta{argument}\}
+\\command[\meta{argument}]
+\\command[\meta{argument1}]\{\meta{argument2}\}
+    \end{semiverbatim}
+  \end{block}
+  
+  \begin{block}<2>{Examples}
+    \begin{semiverbatim}
+\\maketitle
+\\emph\{\meta{text}\}
+\\lipsum[\meta{number}]
+\\section[\meta{short-title}]\{\meta{long-title}\}
+    \end{semiverbatim}
+  \end{block}
 
 \end{frame}
 
@@ -240,7 +246,113 @@
   macro does to these cases.
 \end{exercise}
 
-\tutornote{Finish exercise at 11:45}
+\tutornote{Finish exercise at 11:00}
+
+\section{Logical structure}
+
+\begin{frame}[fragile]{Logical mark up}
+
+  \LaTeX{} provides us with logical mark up, as well as the ability to
+  directly set the appearance. 
+  \begin{block}{Logical mark up}
+      \cs{emph}\marg{\meta{text}}\\
+      \marg{\cs{large} \meta{text}}
+  \end{block}
+  \begin{block}{Appearance mark up}
+      \cs{textit}\marg{\meta{text}}\\
+      \marg{\cs{fontsize}\marg{12 pt}\marg{14 pt} \meta{text}}
+  \end{block}
+  Usually, logical mark up is best when it is available.
+
+\end{frame}
+
+\begin{frame}{Title Page}
+
+  First, you need to give the \enquote{meta-data}:
+  \begin{itemize}
+    \item \cs{title}\marg{\meta{title}}
+    \item \cs{author}\marg{\meta{author(s)}}
+    \item \cs{date}\marg{\meta{date}} (optional)
+  \end{itemize}
+   Then use \cs{maketitle} to display the title page.
+   
+\end{frame}
+
+\begin{frame}{Sectioning commands}
+
+  Article-like classes provide the commands:
+  \begin{itemize}
+    \item \cs{part}\oarg{\meta{short title}}\marg{\meta{title}}
+    \item \cs{section}\oarg{\meta{short title}}\marg{\meta{title}}
+    \item \cs{subsection}\oarg{\meta{short title}}\marg{\meta{title}}
+    \item \cs{subsubsection}\oarg{\meta{short title}}\marg{\meta{title}}
+    \item 
+      \alert<3>{\cs{paragraph}\oarg{\meta{short title}}\marg{\meta{title}}}
+    \item \cs{subparagraph}\oarg{\meta{short title}}\marg{\meta{title}}
+  \end{itemize}
+  
+  \vspace{2 em}
+  \uncover<2->{%
+     Book and report-like classes also provide the command:\\
+    \cs{chapter}\oarg{\meta{short title}}\marg{\meta{title}}%
+  }
+
+\end{frame}
+
+\begin{exercise}
+  Try producing the following document.
+  \verbatiminput{examples/example2}
+  
+  Experiment with the logical mark up for appearance, for example
+  \cs{emph}, \cs{large}, \cs{Large} and \cs{Huge}. Compare these
+  with the direct changes brought about by \cs{textit} and \cs{textbf}.
+  
+  Try changing the format of text for a longer block by trapping the
+  formatting changes within \cs{begingroup} and \cs{endgroup}, for
+  example
+  \begin{verbatim}
+    \begingroup
+      \large
+      \itshape
+      Some text
+      
+      A second paragraph
+    \endgroup
+  \end{verbatim}
+  
+\end{exercise}
+
+\begin{frame}[fragile]{Lists}
+
+  \begin{block}{Order not important}
+\begin{verbatim}
+  \begin{itemize}
+    \item This is an unordered list
+  \end{itemize}
+\end{verbatim}
+  \end{block}
+  
+  \begin{block}{Order important}
+\begin{verbatim}
+  \begin{enumerate}
+    \item This one is ordered
+    \item So this will have number 2!
+  \end{enumerate}
+\end{verbatim}
+  \end{block}
+
+\end{frame}
+
+\begin{excercise}
+  Make some lists, and nest one list inside another. How does the
+  format of the numbers or markers change? You can only go to
+  four levels with standard \LaTeX{}, but more than four nestings
+  tends to be a bad sign anyway!
+\end{excercise}
+
+\tutornote{Finish exercise at 12:00}
+
+\section{Classes}
 
 \begin{frame}{Document classes}
 
@@ -288,7 +400,7 @@
 
 \begin{frame}[fragile]{KOMA-Script Example}
 
-  \verbatiminput{examples/example2}
+  \verbatiminput{examples/example3}
 
 \end{frame}
 
@@ -338,113 +450,36 @@
 \end{exercise}
 
 \tutornote{Finish exercise at 12:30 and go to lunch. Restart at
-13:30.}
+13:15.}
 
-\section{Logical structure}
+\section{Cross-referencing}
 
-\begin{frame}[fragile]{Logical mark up}
+\begin{frame}[fragile]{Cross-referencing}
 
-  \LaTeX{} provides us with logical mark up, as well as the ability to
-  directly set the appearance. 
-  \begin{block}{Logical mark up}
-      \cs{emph}\marg{\meta{text}}\\
-      \marg{\cs{large} \meta{text}}
+  \begin{block}{Example input}
+    \begin{verbatim}
+\section{A section}
+\label{sec:interesting}
+...
+\ref{sec:interesting}
+    \end{verbatim}
   \end{block}
-  \begin{block}{Appearance mark up}
-      \cs{textit}\marg{\meta{text}}\\
-      \marg{\cs{fontsize}\marg{12 pt}\marg{14 pt} \meta{text}}
-  \end{block}
-  Usually, logical mark up is best when it is available.
-
-\end{frame}
-
-\begin{frame}{Title Page}
-
-  First, you need to give the \enquote{meta-data}:
-  \begin{itemize}
-    \item \cs{title}\marg{\meta{title}}
-    \item \cs{author}\marg{\meta{author(s)}}
-    \item \cs{date}\marg{\meta{date}} (optional)
-  \end{itemize}
-   Then use \cs{maketitle} to display the title page.
-   
-   \vspace{2 em}
-   
-   \uncover<2>{%
-     Classes such as KOMA-Script add more items, for example
-     \cs{publisher}.%
-   }
-
-\end{frame}
-
-\begin{frame}{Sectioning commands}
-
-  Article-like classes provide the commands:
-  \begin{itemize}
-    \item \cs{part}\oarg{\meta{short title}}\marg{\meta{title}}
-    \item \cs{section}\oarg{\meta{short title}}\marg{\meta{title}}
-    \item \cs{subsection}\oarg{\meta{short title}}\marg{\meta{title}}
-    \item \cs{subsubsection}\oarg{\meta{short title}}\marg{\meta{title}}
-    \item 
-      \alert<3>{\cs{paragraph}\oarg{\meta{short title}}\marg{\meta{title}}}
-    \item \cs{subparagraph}\oarg{\meta{short title}}\marg{\meta{title}}
-  \end{itemize}
   
-  \vspace{2 em}
-  \uncover<2->{%
-     Book and report-like classes also provide the command:\\
-    \cs{chapter}\oarg{\meta{short title}}\marg{\meta{title}}%
-  }
+  \emph{Two} \LaTeX{} runs are needed to get cross-references right.
 
 \end{frame}
 
 \begin{exercise}
   Try producing the following document.
-  \verbatiminput{examples/example3}
-
-  Here are some more KOMA-Script class options to try: 
-  \texttt{appendixprefix}, \texttt{toc=flat}, \texttt{headsepline},
-  \texttt{footsepline}.
+  \verbatiminput{examples/example4}
   
-  Experiment with the logical mark up for appearance, for example
-  \cs{emph}, \cs{large}, \cs{Large} and \cs{Huge}. Compare these
-  with the direct changes brought about by \cs{textit} and \cs{textbf}.
-  
-  Try changing the format of text for a longer block by trapping the
-  formatting changes within \cs{begingroup} and \cs{endgroup}, for
-  example
-  \begin{verbatim}
-    \begingroup
-      \large
-      \itshape
-      Some text
-      
-      A second paragraph
-    \endgroup
-  \end{verbatim}
-  
+  Experiment with cross-references to sections, subsections and items in
+  ordered lists. Can you see who it works?
 \end{exercise}
 
-\begin{frame}[fragile]{Lists}
+\tutornote{Finish exercise at around 13:45}
 
-  \begin{block}{Order not important}
-\begin{verbatim}
-  \begin{itemize}
-    \item This is an unordered list
-  \end{itemize}
-\end{verbatim}
-  \end{block}
-  
-  \begin{block}{Order important}
-\begin{verbatim}
-  \begin{enumerate}
-    \item This one is ordered
-    \item So this will have number 2!
-  \end{enumerate}
-\end{verbatim}
-  \end{block}
-
-\end{frame}
+\section{More logical structure}
 
 \begin{frame}[fragile]{Mathematics}
 
@@ -483,11 +518,6 @@
 \end{frame}
 
 \begin{exercise}
-  Make some lists, and nest one list inside another. How does the
-  format of the numbers or markers change? You can only go to
-  four levels with standard \LaTeX{}, but more than four nestings
-  tends to be a bad sign anyway!
-
   Try creating your own simple commands using \cs{newcommand}. Think of
   how to create commands using 1, 2 and 3 arguments.
   
@@ -501,9 +531,9 @@
   might use \cs{textsuperscript} rather than \verb"^" in some cases.
 \end{exercise}
 
-\tutornote{Finish exercise at 14:30.}
+\tutornote{Finish exercise at 14:15.}
 
-\section{Graphics and tables}
+\section{Floating material}
 
 \begin{frame}[fragile]{On packages}
 
@@ -569,20 +599,9 @@ as is show in Figure~\alert<6>{\\ref\{fig:sample\}}
   Try producing the following document. (Use an image application,
   such as Paint, to produce a simple picture and save it as
   \texttt{shapes.png}.)
-  \verbatiminput{examples/example4}
+  \verbatiminput{examples/example5}
   Here are some more class options to try that will affect the list of
   figures: \texttt{chapteratlists}, \texttt{chapteratlists=0mm}.
-  
-  Experiment with the \cs{label} and \cs{ref} mechanism. How many
-  \LaTeX{} runs do you need to get the cross-references right?
-  
-  What happens when you cross-reference to a chapter or section using
-  \begin{verbatim}
-    \section{An example}
-    \label{sec:example}
-    
-    As is shown in~\ref{sec:example}.
-  \end{verbatim}
 \end{exercise}
 
 \begin{frame}{Tables}
@@ -630,7 +649,7 @@ as is show in Figure~\alert<6>{\\ref\{fig:sample\}}
 
 \tutornote{Finish exercise at 15:00.}
 
-\section{Bibliographies and long documents}
+\section{Bibliographies}
 
 \begin{frame}{Creating a bibliography}
 
@@ -780,7 +799,7 @@ Some text \cite{key}.
 
   Then create a file called, say, \texttt{example5.tex} that contains
   the following:
-  \verbatiminput{examples/example5.tex}
+  \verbatiminput{examples/example6.tex}
 
   If you are using a terminal or command prompt, you will need to use
   the following commands:
@@ -802,6 +821,12 @@ Some text \cite{key}.
   and \texttt{sort\&compress}.
 \end{exercise}
 
+\tutornote{Finish exercise at 15:45 and break for coffee}
+
+\tutornote{Restart at 16:00}
+
+\section{Long documents}
+
 \begin{frame}{Working with long documents}
 
   \begin{itemize}
@@ -817,7 +842,7 @@ Some text \cite{key}.
 \begin{exercise}
 
   Create a master file
-  \verbatiminput{examples/example6.tex}
+  \verbatiminput{examples/example7.tex}
   along with the three chapters, each of which can be as simple as
   \begin{verbatim}
     \chapter{A demo}
@@ -828,8 +853,7 @@ Some text \cite{key}.
 
 \end{exercise}
 
-\tutornote{Finish exercise at 15:30 and have refreshments. Q\&A
-session starts at 16:00.}
+\tutornote{Finish exercise at 16:15}
 
 \section{Further information}
 

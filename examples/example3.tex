@@ -1,47 +1,15 @@
-\documentclass[oneside]{scrbook}
+\documentclass{scrreprt}
 
-\usepackage{lipsum}% provides \lipsum to produce dummy text
-
-\titlehead{University of East Anglia\\
-Norwich\\
-NR15 1AJ}
-\subject{A thesis submitted for the degree of Doctor of Philosophy}
-\title{My Thesis}
+\title{A Sample Document}
 \author{Ann Author}
-\date{July 2010}
-\publishers{Prof.\ My Advisor}
 
 \begin{document}
 \maketitle
-
-\frontmatter
 \tableofcontents
 
-\chapter{Foreword}
-
-This is the foreword. It is in an unnumbered chapter.
-
-\mainmatter
 \chapter{Introduction}
 
-This is a sample chapter with a reference to Chapter~\ref{ch:method}.
+This is a sample document with some dummy 
+text\footnote{and a footnote}.
 
-\section{Sample Section}
-
-This is a sample section with some dummy text to pad it out. \lipsum
-
-\chapter{Method}\label{ch:method}
-
-This is another chapter with some more dummy text. \lipsum
-
-\appendix % Switch to appendices
-
-\chapter{A Sample Appendix}\label{apd:sample}
-
-This is an appendix. \lipsum
-
-\chapter{Another Appendix}
-
-This is another appendix with a reference to Appendix~\ref{apd:sample}.
-\lipsum
 \end{document}

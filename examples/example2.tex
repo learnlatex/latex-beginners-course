@@ -1,15 +1,25 @@
-\documentclass{scrreprt}
+\documentclass{report}
 
-\title{A Sample Document}
+\usepackage{lipsum}% provides \lipsum to produce dummy text
+
+\title{My Thesis}
 \author{Ann Author}
+\date{July 2010}
 
 \begin{document}
 \maketitle
-\tableofcontents
 
 \chapter{Introduction}
 
-This is a sample document with some dummy 
-text\footnote{and a footnote}.
+This is a sample chapter. It includes some \emph{emphasise}
+and also some \textbf{bold} text.
+
+\section{Sample Section}
+
+This is a sample section with some dummy text to pad it out. \lipsum[1]
+
+\chapter{Method}
+
+This is another chapter with some more dummy text. \lipsum[1]
 
 \end{document}

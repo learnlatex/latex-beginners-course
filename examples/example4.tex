@@ -1,7 +1,6 @@
-\documentclass[oneside,numbers=noenddot]{scrbook}
+\documentclass[oneside]{scrbook}
 
 \usepackage{lipsum}% provides \lipsum to produce dummy text
-\usepackage{graphicx}% provides \includegraphics
 
 \titlehead{University of East Anglia\\
 Norwich\\
@@ -17,7 +16,6 @@ NR15 1AJ}
 
 \frontmatter
 \tableofcontents
-\listoffigures
 
 \chapter{Foreword}
 
@@ -26,13 +24,7 @@ This is the foreword. It is in an unnumbered chapter.
 \mainmatter
 \chapter{Introduction}
 
-This is a sample chapter with a figure and a reference to Chapter~\ref{ch:method}.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics{shapes}
-\caption{Some Shapes}
-\end{figure}
+This is a sample chapter with a reference to Chapter~\ref{ch:method}.
 
 \section{Sample Section}
 
@@ -40,16 +32,7 @@ This is a sample section with some dummy text to pad it out. \lipsum
 
 \chapter{Method}\label{ch:method}
 
-This is another chapter with a reference to Figure~\ref{fig:shapes}
-and some more dummy text.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=0.5,angle=45]{shapes}
-\caption{A Sample Figure}\label{fig:shapes}
-\end{figure}
-
-\lipsum
+This is another chapter with some more dummy text. \lipsum
 
 \appendix % Switch to appendices
 
@@ -59,5 +42,6 @@ This is an appendix. \lipsum
 
 \chapter{Another Appendix}
 
-This is another appendix with a reference to Appendix~\ref{apd:sample}. \lipsum
+This is another appendix with a reference to Appendix~\ref{apd:sample}.
+\lipsum
 \end{document}
