@@ -216,14 +216,14 @@
   
   Try experimenting with white space: what do multiple spaces and 
   multiple lines do? Also try out using the tilde (\verb"~") for 
-  a non-breaking space and \cs{,}, \cs{:} and \cs{;} for spaces of different
+  a non-breaking space and \cs{,} for spaces of different
   widths.
   
   \LaTeX{} automatically indents new paragraphs: see what the \cs{noindent}
   macro does to these cases.
 \end{exercise}
 
-\tutornote{Finish exercise at 11:00}
+\tutornote{Finish exercise at 10:50}
 
 \section{Logical structure}
 
@@ -268,7 +268,6 @@
     \item \cs{subparagraph}\oarg{\meta{short title}}\marg{\meta{title}}
   \end{itemize}
   
-
 \end{frame}
 
 \begin{exercise}
@@ -322,7 +321,7 @@
   tends to be a bad sign anyway!
 \end{exercise}
 
-\tutornote{Finish exercise at 12:00}
+\tutornote{Finish exercise at 11:30}
 
 \section{Classes}
 
@@ -421,9 +420,6 @@
   need a small subset of the commands available!
 \end{exercise}
 
-\tutornote{Finish exercise at 12:30 and go to lunch. Restart at
-13:15.}
-
 \section{Cross-referencing}
 
 \begin{frame}[fragile]{Cross-referencing}
@@ -449,7 +445,7 @@
   ordered lists. Can you see who it works?
 \end{exercise}
 
-\tutornote{Finish exercise at around 13:45}
+\tutornote{Finish exercise at 12:30 and go to lunch. Restart at 13:15.}
 
 \section{More logical structure}
 
@@ -478,7 +474,7 @@
 
   \begin{block}{Syntax}
     \cs{newcommand*}\cs{\meta{name}}\marg{\meta{replacement text}}\\
-    \cs{newcommand*}\cs{\meta{name}}\oarg{number}%
+    \cs{newcommand*}\cs{\meta{name}}\oarg{\meta{number}}%
       \marg{\meta{replacement text}}\\
   \end{block}
   
@@ -503,7 +499,7 @@
   how to create commands using 1, 2 and 3 arguments.
 \end{exercise}
 
-\tutornote{Finish exercise at 14:15.}
+\tutornote{Finish exercise at 13:45.}
 
 \section{Floating material}
 
@@ -512,7 +508,7 @@
   The \LaTeX{} kernel is rather limited: to get around that we
   load \emph{packages}:
   \begin{semiverbatim}
-\cs{usepackage}\oarg{options}\marg{package}
+\cs{usepackage}\oarg{\meta{options}}\marg{\meta{package}}
   \end{semiverbatim}
   or
   \begin{semiverbatim}
@@ -541,7 +537,7 @@
   \vspace{1 em}
   \uncover<2>{%
     Graphics can also be \enquote{drawn} in \LaTeX{} using the
-    Ti\emph{k}z package: a course in itself!
+    Ti\emph{k}z package:\\ a course in itself!
   }
 
 \end{frame}
@@ -551,10 +547,10 @@
   \begin{block}{A floating figure \dots}
 \begin{semiverbatim}
 \\begin\{figure\}\alert<2>{[htbp]}
-\alert<3>{\\centering}
-\\includegraphics\{myimage\}
-\alert<4>{\\caption\{A Sample Figure\}}
-\alert<5>{\\label\{fig:sample\}}
+  \alert<3>{\\centering}
+  \\includegraphics\{myimage\}
+  \alert<4>{\\caption\{A Sample Figure\}}
+  \alert<5>{\\label\{fig:sample\}}
 \\end\{figure\}
 \end{semiverbatim}
   \end{block}
@@ -582,7 +578,7 @@ as is show in Figure~\alert<6>{\\ref\{fig:sample\}}
     \item The floating environment for a table is called \texttt{table};
     \item However, the content can be anything!
     \item Use the \texttt{tabular} environment to make tables;
-    \item Use \textsf{booktabs} for rules.
+    \item Load the \textsf{booktabs} package for rules.
   \end{itemize}
   
 \end{frame}
@@ -592,6 +588,7 @@ as is show in Figure~\alert<6>{\\ref\{fig:sample\}}
   \begin{block}{A simple table}
 \begin{semiverbatim}
 \alert<2>{\\begin\{table\}}
+  \alert<2>{\\centering}
   \alert<2>{\\caption\{A caption\}}
   \alert<2>{\\label\{tab:example\}}
   \alert<3>{\\begin\{tabular\}}\alert<4>{\{lcr\}}
@@ -619,7 +616,7 @@ as is show in Figure~\alert<6>{\\ref\{fig:sample\}}
   
 \end{exercise}
 
-\tutornote{Finish exercise at 15:00.}
+\tutornote{Finish exercise at 14:45.}
 
 \section{Bibliographies}
 
@@ -694,7 +691,7 @@ Some text \cite{key}.
 
   \begin{example}
     \begin{semiverbatim}
-\alert<2>{@article}\{\alert<3>{lamport94},
+\alert<2>{@book}\{\alert<3>{lamport94},
    author    = "Leslie Lamport",
    title     = 
      "\alert<4>{\{\\LaTeX\}}: a document preparation system",
@@ -713,7 +710,7 @@ Some text \cite{key}.
     \begin{semiverbatim}
 @inproceedings\{smith05,
   author    = "Smith, Jr, John \alert<2>{and} Jane Lucy Doe
-   \alert<2>{and} and Other, Andrew N. \alert<2>{and} de Vere, Jo",
+   \alert<2>{and} Other, Andrew N. \alert<2>{and} de Vere, Jo",
   title     = "An example article",
   booktitle = "Proceedings of the Imaginary Society",
   month     = JAN
@@ -793,10 +790,6 @@ Some text \cite{key}.
   and \texttt{sort\&compress}.
 \end{exercise}
 
-\tutornote{Finish exercise at 15:45 and break for coffee}
-
-\tutornote{Restart at 16:00}
-
 \section{Long documents}
 
 \begin{frame}{Working with long documents}
@@ -806,7 +799,9 @@ Some text \cite{key}.
     \item \cs{input} places the material loaded \enquote{here};
     \item \cs{include} is used for separate chapters:\\ it always starts
       a new page;
-    \item Using \cs{include} allows you to \cs{includeonly} single chapters.
+    \item Using \cs{include} allows you to \cs{includeonly}\\
+      selected chapters;
+    \item Use \cs{includeonly} in the preamble.
   \end{itemize}
   
 \end{frame}
@@ -825,7 +820,7 @@ Some text \cite{key}.
 
 \end{exercise}
 
-\tutornote{Finish exercise at 16:15}
+\tutornote{Finish exercise at 15:45 and break for coffee}
 
 \section{Further information}
 
@@ -835,7 +830,8 @@ Some text \cite{key}.
     \item \url{www.tex.ac.uk/faq};
     \item \url{wwww.latex-community.org};
     \item \url{tex.stackexchange.com};
-    \item \url{theoval.cmp.uea.ac.uk/~nlct/latex/}.
+    \item \url{theoval.cmp.uea.ac.uk/~nlct/latex/};
+    \item \url{detexify.kirelabs.org/}.
   \end{itemize}
 
 \end{frame}
