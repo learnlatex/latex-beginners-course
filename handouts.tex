@@ -6,7 +6,7 @@
 % ----------------------------------------------------------------------
 % New commands for article mode
 % ----------------------------------------------------------------------
-\newcommand*\tutornote[1]{} % Gobble timing notes
+\newcommand{\tutornote}[1]{} % Gobble timing notes
 
 \newtheorem{Example}{\translate{Example}}
 \newtheorem{Exercise}{\translate{Exercise}}
@@ -18,18 +18,19 @@
 \setbeamertemplate{alerted text begin}{}
 \setbeamertemplate{alerted text end}{}
 
-\setbeamertemplate{block begin}{%
-  \par
-  \vskip\medskipamount
+\setbeamertemplate{block begin}%
   {%
+    \par
+    \vskip\medskipamount
+    {%
+      \noindent
+      \textbf{\insertblocktitle}%
+    }%
+    \par
+    \nobreak % Addition to standard template
     \noindent
-    \textbf{\insertblocktitle}%
-  }%
-  \par
-  \nobreak % Addition to standard template
-  \noindent
-  \ignorespaces 
-}
+    \ignorespaces 
+  }
 
 % ----------------------------------------------------------------------
 

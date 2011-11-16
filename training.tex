@@ -10,24 +10,24 @@
 % ----------------------------------------------------------------------
 % New commands for this document
 % ----------------------------------------------------------------------
-\newcommand*\BibTeX{BibTeX}
-\newcommand*\cls[1]{\textsf{#1}}
-\newcommand*\cs[1]{\texttt{\char`\\#1}}
-\newcommand*\marg[1]{\texttt{\char`\{#1\char`\}}}
-\newcommand*\meta[1]{\ensuremath{\langle}\emph{#1}\ensuremath{\rangle}}
-\newcommand*\oarg[1]{\texttt{[#1]}}
-\newcommand*\pkg[1]{\textsf{#1}}
+\newcommand*{\BibTeX}{BibTeX}
+\newcommand*{\cls}[1]{\textsf{#1}}
+\newcommand*{\cs}[1]{\texttt{\char`\\#1}}
+\newcommand*{\marg}[1]{\texttt{\char`\{#1\char`\}}}
+\newcommand*{\meta}[1]{\ensuremath{\langle}\emph{#1}\ensuremath{\rangle}}
+\newcommand*{\oarg}[1]{\texttt{[#1]}}
+\newcommand*{\pkg}[1]{\textsf{#1}}
 
-\renewcommand*\LaTeX{LaTeX}
-\renewcommand*\LaTeXe{LaTeX2e}
-\renewcommand*\TeX{TeX}
+\renewcommand*{\LaTeX}{LaTeX}
+\renewcommand*{\LaTeXe}{LaTeX2e}
+\renewcommand*{\TeX}{TeX}
 % ----------------------------------------------------------------------
 
 % ----------------------------------------------------------------------
 % Meta-data
 % ----------------------------------------------------------------------
-\title{\LaTeX\ Training Course}
-\subtitle{\enquote{Using \LaTeX\ to write a thesis}}
+\title{\LaTeX{} Training Course}
+\subtitle{\enquote{Using \LaTeX{} to write a thesis}}
 \date{26th August 2011}
 \author{UK-TUG Volunteers}
 % ----------------------------------------------------------------------
@@ -38,15 +38,14 @@
   \titlepage
 \end{frame}
 
-\mode<article>{\maketitle}
-
 \tutornote{Time: 10:15}
 
-\mode<presentation>{%
-  \begin{frame}{Outline}
-    \tableofcontents
-  \end{frame}
-}
+\mode<presentation>%
+  {%
+    \begin{frame}{Outline}
+      \tableofcontents
+    \end{frame}
+  }
 
 \section{An overview of \LaTeX}
 
