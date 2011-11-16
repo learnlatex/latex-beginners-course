@@ -18,9 +18,12 @@
 \newcommand*{\oarg}[1]{\texttt{[#1]}}
 \newcommand*{\pkg}[1]{\textsf{#1}}
 
-\renewcommand*{\LaTeX}{LaTeX}
-\renewcommand*{\LaTeXe}{LaTeX2e}
-\renewcommand*{\TeX}{TeX}
+\AtBeginDocument
+  {
+    \renewcommand*{\LaTeX}{LaTeX}
+    \renewcommand*{\LaTeXe}{LaTeX2e}
+    \renewcommand*{\TeX}{TeX}
+  }
 % ----------------------------------------------------------------------
 
 % ----------------------------------------------------------------------
@@ -37,6 +40,8 @@
 \begin{frame}
   \titlepage
 \end{frame}
+
+\mode<article>{\maketitle}
 
 \tutornote{Time: 10:15}
 
