@@ -1,0 +1,42 @@
+\documentclass[english,UKenglish]{article}
+
+\usepackage[noamsthm]{beamerarticle}
+\usepackage{comment}
+\usepackage[pdfborder={0 0 0}]{hyperref}
+
+% ----------------------------------------------------------------------
+% New commands for article mode
+% ----------------------------------------------------------------------
+\newcommand{\tutornote}[1]{} % Gobble timing notes
+
+\date{}
+\renewcommand\date[1]{}
+
+\newtheorem{Example}{\translate{Example}}
+\newtheorem{Exercise}{\translate{Exercise}}
+\excludecomment{exercise}
+\newenvironment<>{example}
+  {\begin{Example}\nobreak\mbox{}\nobreak}
+  {\end{Example}}
+
+\setbeamertemplate{alerted text begin}{}
+\setbeamertemplate{alerted text end}{}
+
+\setbeamertemplate{block begin}{%
+  \par
+  \vskip\medskipamount
+  {%
+    \noindent
+    \textbf{\insertblocktitle}%
+  }%
+  \par
+  \nobreak % Addition to standard template
+  \noindent
+  \ignorespaces 
+}
+
+% ----------------------------------------------------------------------
+
+\AtBeginDocument{\renewcommand{\pkg}[1]{#1}}
+
+\input{training}
