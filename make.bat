@@ -20,7 +20,7 @@ rem Makefile for 'LaTeX for Beginners' materials
 
   setlocal
 
-  set AUXFILES=4ct 4tc aux dvi idv lg log nav out snm tmp vrb xref 
+  set AUXFILES=4ct 4tc aux dvi idv lg log nav out snm tmp toc vrb xref 
   set CLEAN =css gz html pdf png
   
   cd /d "%~dp0"

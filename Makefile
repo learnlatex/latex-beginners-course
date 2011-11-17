@@ -32,6 +32,7 @@ AUXFILES = \
 	nav  \
 	out  \
 	snm  \
+	toc  \
 	tmp  \
 	vrb  \
 	xref 
