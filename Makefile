@@ -12,9 +12,12 @@
 
 help:
 	@echo ""
-	@echo " make all    - make all targets"
-	@echo " make clean  - clean out directory"
-	@echo " make slides - make slides"
+	@echo " make all      - make all targets"
+	@echo " make clean    - clean out directory"
+	@echo " make handouts - make student handouts"
+	@echo " make online   - make HTML version"
+	@echo " make notes    - make tutor notes"
+	@echo " make slides   - make slides"
 	@echo ""
 	
 ##############################################################
@@ -45,15 +48,33 @@ CLEAN = \
 	png
 	
 ################################################################
+# Standard file options                                        #
+################################################################
+
+%.pdf: %.tex
+	NAME=`basename $< .tex` ; \
+	echo "Typesetting $$NAME" ; \
+	pdflatex -draftmode -interaction=nonstopmode $< > /dev/null ; \
+	if [ $$? = 0 ] ; then  \
+	  pdflatex -interaction=nonstopmode $< > /dev/null ; \
+	fi
+	for I in $(AUXFILES) ; do \
+	  rm -f *.$$I ; \
+	done
+	
+################################################################
 # User make options                                            #
 ################################################################
 
 .PHONY = \
-	all   \
-	clean \
+	all      \
+	clean    \
+	handouts \
+	online   \
+	notes    \
 	slides
 	
-all: slides
+all: handouts online notes slides
 	
 clean:
 	echo "Cleaning up"
@@ -64,4 +85,15 @@ clean:
 	  rm -f *.$$I ; \
 	done
 	
-slides:
+handouts: handouts.pdf
+	
+online:
+	echo "Typesetting HTML"
+	htlatex online "online" > /dev/null
+	for I in $(AUXFILES) ; do \
+	  rm -f *.$$I ; \
+	done
+	
+notes: tutornotes.pdf
+	
+slides: slides.pdf

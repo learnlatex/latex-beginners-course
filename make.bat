@@ -27,12 +27,17 @@ rem Makefile for 'LaTeX for Beginners' materials
 
 :main
 
-  if /i [%1] == [all]   goto :all
-  if /i [%1] == [clean] goto :clean
+  if /i [%1] == [all]      goto :all
+  if /i [%1] == [clean]    goto :clean
+  if /i [%1] == [handouts] goto :handouts
+  if /i [%1] == [online]   goto :online
+  if /i [%1] == [slides]   goto :slides
 
   goto :help
   
 :all
+
+  call make handouts online slides
 
 :clean
 
@@ -43,7 +48,40 @@ rem Makefile for 'LaTeX for Beginners' materials
   for %%I in (%AUXFILES%) do if exist *.%%I del /q *.%%I
 
   goto :end
+  
+:handouts
 
+  call :pdf slides
+
+  goto :end
+  
+:online
+
+  htlatex online "online"
+
+  goto :clean-int
+  
+:notes
+
+  call :pdf tutornotes
+
+  goto :end
+  
+:pdf
+
+	echo "Typesetting %1"
+	pdflatex -draftmode -interaction=nonstopmode %1 > nul
+	if not ERRORLEVEL 1 (
+	  pdflatex -interaction=nonstopmode %1 > nul
+    )
+	goto :clean-int
+  
+:slides
+
+  call :pdf slides
+
+  goto :end
+  
 :end 
 
   shift
