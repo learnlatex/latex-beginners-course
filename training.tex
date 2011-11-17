@@ -56,7 +56,7 @@
     \end{frame}
   }
 
-\section{An overview of \LaTeX}
+\section{An overview of \LaTeX{}}
 
 \begin{frame}{\LaTeX{} is a powerful system}
 
@@ -74,43 +74,43 @@
 
 \tutornote{Demo documents here}
 
-\begin{frame}{What is \LaTeX, and what is \TeX?}
+\begin{frame}{What is \LaTeX{}, and what is \TeX{}?}
 
   \begin{itemize}
     \item \TeX{} is a typesetting application;
     \item \TeX{} uses \emph{primitives} to determine how to put text
       on a page;
     \item For most practical purposes, we need a \emph{format} built 
-      on top of \TeX, for example:
+      on top of \TeX{}, for example:
       \begin{itemize}
-        \item Plain \TeX;
-        \item \LaTeX;
+        \item Plain \TeX{};
+        \item \LaTeX{};
         \item Con\TeX{}t;
       \end{itemize}
     \item You can think of \LaTeX{} as an interpreter between you and
-      \TeX.
+      \TeX{}.
   \end{itemize}
 
 \end{frame}
 
 \begin{frame}{\TeX{} \enquote{engines}}
 
-  \begin{block}{pdf\TeX}
+  \begin{block}{pdf\TeX{}}
     The standard binary program: we'll be using this today.
   \end{block}
   
-  \begin{block}{Xe\TeX}
+  \begin{block}{Xe\TeX{}}
     A merger of \TeX{} with modern font technology with support
     for native Unicode input and bidirectional typesetting.
   \end{block}
   
-  \begin{block}{Lua\TeX}
-    Also a modern engine: integrates the Lua scripting into \TeX.
+  \begin{block}{Lua\TeX{}}
+    Also a modern engine: integrates the Lua scripting into \TeX{}.
   \end{block}
   
 \end{frame}
 
-\begin{frame}{What do we need to use \LaTeX?}
+\begin{frame}{What do we need to use \LaTeX{}?}
 
   \begin{itemize}
     \item A \TeX{} distribution: \TeX{} Live (Windows, Mac, Linux) or
@@ -144,7 +144,7 @@
       \cs{example};
     \item Writing in \LaTeX{} is therefore a bit like \emph{programming}
       it to produce the document you want;
-    \item \emph{Logical} mark up is important in \LaTeX: we'll use some
+    \item \emph{Logical} mark up is important in \LaTeX{}: we'll use some
       almost straight away!
   \end{itemize}
 
@@ -167,7 +167,7 @@
         {\shortstack{Any\\Changes?}};
       \path (14,0) node[draw] (done) {Done};
       \draw[->] (edit) -- (errors) node[midway,above=-1em] 
-        {\LaTeX};
+        {\LaTeX{}};
       \draw[->] (errors) -- ++(0,-2) node[midway,right=-1em] 
         {Yes} -| (edit);
       \draw[->] (errors) -- (pdf) node[midway,above=-1em] {No};
@@ -682,13 +682,13 @@ Some text \cite{key}.
       \end{scope}
       \path (8.5,4.5) node[draw,rectangle] (rmbbl) {Remove \texttt{.bbl} file};
       \draw[->] (edit) -- (1,1) -- (errors) node[midway,above] 
-        {\shortstack{\LaTeX\\\texttt{.tex} file}};
+        {\shortstack{\LaTeX{}\\\texttt{.tex} file}};
       \draw (editbib) -- (1,1);
       \draw[->] (errors) -- ++(0,-2) node[midway,left] {Yes}
         -| (edit) node[pos=0,below,anchor=north east] 
           {Error in document};
       \draw[->] (errors) -- (bibtexerrors)
-        node[midway,above] {\shortstack{No errors.\\Run \BibTeX}};
+        node[midway,above] {\shortstack{No errors.\\Run \BibTeX{}}};
       \draw[->] (bibtexerrors) -- ++(0,-2.75)
         node[midway,right] {Yes} -| (edit) 
         node[pos=0,below,anchor=north east] 
@@ -697,7 +697,7 @@ Some text \cite{key}.
         {Yes} -| (editbib) node[pos=0,above,anchor=south east] 
         {Error in bib file};
       \draw[->] (bibtexerrors) -- (errors2) node[midway,above] 
-        {\shortstack{No errors.\\Run \LaTeX\\(twice)}};
+        {\shortstack{No errors.\\Run \LaTeX{}\\(twice)}};
       \draw[->] (errors2) |- (rmbbl) node[pos=0.2,right] {Yes};
       \draw[->] (rmbbl) -| (editbib);
       \draw[->] (errors2) -- (pdf) node[midway,above] {No};
@@ -713,7 +713,7 @@ Some text \cite{key}.
 \alert<2>{@book}\{\alert<3>{lamport94},
    author    = "Leslie Lamport",
    title     = 
-     "\alert<4>{\{\\LaTeX\}}: a document preparation system",
+     "\alert<4>{\{\\LaTeX\{\}\}}: a document preparation system",
    edition   = "2nd",
    publisher = "Addison-{}-Wesley",
    year      = \alert<5>{1994},
@@ -740,7 +740,7 @@ Some text \cite{key}.
 
 \end{frame}
 
-\begin{frame}[fragile]{Citations in \LaTeX}
+\begin{frame}[fragile]{Citations in \LaTeX{}}
 
   \begin{itemize}
     \item The \LaTeX{} kernel is limited for citations;
@@ -858,8 +858,8 @@ Some text \cite{key}.
 \begin{frame}{Reading}
 
   \begin{itemize}
-    \item \emph{Not So Short Introduction to \LaTeXe}, Oetiker;
-    \item \emph{A Guide to \LaTeX}, Kopka and Daly;
+    \item \emph{Not So Short Introduction to \LaTeXe{}}, Oetiker;
+    \item \emph{A Guide to \LaTeX{}}, Kopka and Daly;
     \item \emph{\LaTeX{} Beginners Guide}, Kottwitz;
     \item \emph{\LaTeX{} and Friends}, van Dongen.
   \end{itemize}
