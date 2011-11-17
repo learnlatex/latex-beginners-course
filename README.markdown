@@ -26,3 +26,9 @@ the easiest way to go.
 The timing given in the tutor notes is approximate. Depending on the group,
 something like half an hour at the end of the day for general questions seems
 to work well.
+
+Using this material
+-------------------
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0
+Unported License](http://creativecommons.org/licenses/by-sa/3.0/).
