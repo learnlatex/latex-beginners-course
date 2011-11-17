@@ -45,7 +45,8 @@ CLEAN = \
 	gz   \
 	html \
 	pdf  \
-	png
+	png  \
+	svg
 	
 ################################################################
 # Standard file options                                        #

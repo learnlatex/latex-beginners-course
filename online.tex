@@ -5,7 +5,7 @@
 \usepackage[pdfborder={0 0 0}]{hyperref}
 
 % ----------------------------------------------------------------------
-% New commands for article mode
+% New commands for online mode
 % ----------------------------------------------------------------------
 \newcommand{\tutornote}[1]{} % Gobble timing notes
 
@@ -20,6 +20,10 @@
 
 % ----------------------------------------------------------------------
 
+\renewcommand{\shortstack}[1]{\begingroup\def\\{ }#1\endgroup}
 \AtBeginDocument{\renewcommand{\pkg}[1]{#1}}
+\AtBeginDocument{\renewcommand{\resizebox}[3]{#3}}
+
+\def\pgfsysdriver{pgfsys-tex4ht.def}
 
 \input{training}
