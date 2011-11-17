@@ -9,11 +9,7 @@
 % ----------------------------------------------------------------------
 \newcommand{\tutornote}[1]{} % Gobble timing notes
 
-\date{}
-\renewcommand\date[1]{}
-
 \newtheorem{Example}{\translate{Example}}
-\newtheorem{Exercise}{\translate{Exercise}}
 \excludecomment{exercise}
 \newenvironment<>{example}
   {\begin{Example}\nobreak\mbox{}\nobreak}
@@ -21,19 +17,6 @@
 
 \setbeamertemplate{alerted text begin}{}
 \setbeamertemplate{alerted text end}{}
-
-\setbeamertemplate{block begin}{%
-  \par
-  \vskip\medskipamount
-  {%
-    \noindent
-    \textbf{\insertblocktitle}%
-  }%
-  \par
-  \nobreak % Addition to standard template
-  \noindent
-  \ignorespaces 
-}
 
 % ----------------------------------------------------------------------
 

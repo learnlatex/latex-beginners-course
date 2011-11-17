@@ -18,6 +18,8 @@
 \newcommand*{\oarg}[1]{\texttt{[#1]}}
 \newcommand*{\pkg}[1]{\textsf{#1}}
 
+\providecommand*{\slidesonly}[1]{#1}
+
 \AtBeginDocument
   {
     \renewcommand*{\LaTeX}{LaTeX}
@@ -31,7 +33,7 @@
 % ----------------------------------------------------------------------
 \title{\LaTeX{} Training Course}
 \subtitle{\enquote{Using \LaTeX{} to write a thesis}}
-\date{26th August 2011}
+\date{}
 \author{UK-TUG Volunteers}
 % ----------------------------------------------------------------------
 
@@ -41,12 +43,14 @@
   \titlepage
 \end{frame}
 
-\mode<article>{\maketitle}
+\maketitle
 
 \tutornote{Time: 10:15}
 
+\tableofcontents
+
 \mode<presentation>%
-  {%
+  {
     \begin{frame}{Outline}
       \tableofcontents
     \end{frame}
