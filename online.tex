@@ -20,10 +20,15 @@
 
 % ----------------------------------------------------------------------
 
+% Tikz and TeX4ht work together with the correct driver, but the
+% text in nodes needs to be simplified a bit
+\newcommand*{\pgfsysdriver}{pgfsys-tex4ht.def}
 \renewcommand{\shortstack}[1]{\begingroup\def\\{ }#1\endgroup}
-\AtBeginDocument{\renewcommand{\pkg}[1]{#1}}
+
+% At the same time, there is no sense in resizing graphics
 \AtBeginDocument{\renewcommand{\resizebox}[3]{#3}}
 
-\def\pgfsysdriver{pgfsys-tex4ht.def}
+% Using formatting in frame titles is a problem, so this is disabled
+\AtBeginDocument{\renewcommand{\pkg}[1]{#1}}
 
 \input{training}
