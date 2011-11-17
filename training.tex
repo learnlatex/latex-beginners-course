@@ -490,14 +490,14 @@
 \begin{frame}{Creating your own commands}
 
   \begin{block}{Syntax}
-    \cs{newcommand*}\cs{\meta{name}}\marg{\meta{replacement text}}\\
-    \cs{newcommand*}\cs{\meta{name}}\oarg{\meta{number}}%
+    \cs{newcommand*}\marg{\cs{\meta{name}}}\marg{\meta{replacement text}}\\
+    \cs{newcommand*}\marg\cs{\meta{name}}}\oarg{\meta{number}}%
       \marg{\meta{replacement text}}\\
   \end{block}
   
   \begin{block}{Examples}
-    \cs{newcommand*}\cs{authorname}\marg{Joseph Wright} \\
-    \cs{newcommand*}\cs{important}\oarg{1}\marg{\cs{textbf}\marg{\#1}}
+    \cs{newcommand*}\marg{\cs{authorname}}\marg{Joseph Wright} \\
+    \cs{newcommand*}\marg{\cs{important}}\oarg{1}\marg{\cs{textbf}\marg{\#1}}
   \end{block}
 
 \end{frame}
