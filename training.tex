@@ -18,7 +18,7 @@
 \newcommand*{\oarg}[1]{\texttt{[#1]}}
 \newcommand*{\pkg}[1]{\textsf{#1}}
 
-\providecommand*{\slidesonly}[1]{#1}
+\renewcommand*{\url}[1]{\href{http://#1}{\texttt{#1}}}
 
 \AtBeginDocument
   {
@@ -846,7 +846,7 @@ Some text \cite{key}.
 \begin{frame}{Getting help}
 
   \begin{itemize}
-    \item \url{www.tex.ac.uk/faq};
+    \item \url{www.tex.ac.uk/faq}{www.tex.ac.uk/faq};
     \item \url{wwww.latex-community.org};
     \item \url{tex.stackexchange.com};
     \item \url{theoval.cmp.uea.ac.uk/~nlct/latex/};
