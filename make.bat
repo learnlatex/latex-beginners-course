@@ -9,8 +9,13 @@ rem Makefile for 'LaTeX for Beginners' materials
   rem Default with no target is to give help
 
   echo.
-  echo  make all   - make all targets
-  echo  make clean - clean out directory 
+  echo  make all      - make all targets
+  echo  make clean    - clean out directory
+  echo  make handouts - make student handouts
+  echo  make online   - make HTML version
+  echo  make notes    - make tutor notes
+  echo  make slides   - make slides
+  echo.
 
   goto :EOF
    
