@@ -56,7 +56,7 @@ rem Makefile for 'LaTeX for Beginners' materials
   
 :handouts
 
-  call :pdf slides
+  call :pdf handouts
 
   goto :end
   
