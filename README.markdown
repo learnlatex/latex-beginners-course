@@ -27,8 +27,21 @@ The timing given in the tutor notes is approximate. Depending on the group,
 something like half an hour at the end of the day for general questions seems
 to work well.
 
+For Developers
+-------------------
+
+If you are modifying this course and want to see possible errors, use 
+
+    make -f Makefile_non_silent
+
+rather than 
+
+    make
+
+
 Using this material
 -------------------
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0
 Unported License](http://creativecommons.org/licenses/by-sa/3.0/).
+

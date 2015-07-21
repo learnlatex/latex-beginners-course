@@ -204,7 +204,7 @@
 \alert<6>{\\begin\{document\}}
 \alert<7>{\% This is a comment}
 \alert<8>{This is   a simple}
-\alert<8>{document\\footnote\{with a footnote\}.}
+\alert<8>{document\alert<9>{\\\alert<10>{footnote}\{\alert<11>{with a footnote}\}}.}
 
 \alert<8>{This is a new paragraph.}
 \alert<6>{\\end\{document\}}
@@ -308,7 +308,7 @@
 
 \begin{frame}[fragile]{Lists}
 
-  \begin{block}{Order not important}
+  \begin{block}{List with bullets, dashes, etc.}
 \begin{verbatim}
   \begin{itemize}
     \item This is an unordered list
@@ -316,11 +316,11 @@
 \end{verbatim}
   \end{block}
   
-  \begin{block}{Order important}
+  \begin{block}{List with numbered items}
 \begin{verbatim}
   \begin{enumerate}
-    \item This one is ordered
-    \item So this will have number 2!
+    \item This is the first item.
+    \item This will have number 2!
   \end{enumerate}
 \end{verbatim}
   \end{block}
