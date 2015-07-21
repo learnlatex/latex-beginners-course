@@ -27,8 +27,8 @@ The timing given in the tutor notes is approximate. Depending on the group,
 something like half an hour at the end of the day for general questions seems
 to work well.
 
-For Developers
--------------------
+For Course Developers
+---------------------
 
 If you are modifying this course and want to see possible errors, use 
 
